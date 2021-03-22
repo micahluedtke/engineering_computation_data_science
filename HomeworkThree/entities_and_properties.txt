@@ -1,0 +1,66 @@
+Entities:
+Authors
+Publishers
+Editors
+Books
+Customers
+Orders
+OrderDetails
+
+Properties Authors:
+(PK)AuthorID
+FirstName
+LastName
+Country
+
+Properties Publishers:
+(PK)PublisherID
+PublisherName
+City
+Region
+Country
+
+Properties Editors:
+(PK) EditorID
+EditorName
+City
+Region
+Country
+
+Properties Books:
+(PK) BookID
+BookTitle
+Genre
+(FK) AuthorID
+(FK) PublisherID
+(FK) EditorID
+PublicationYear
+Price
+RoyaltyPayment
+
+Properties Customers:
+(PK) CustomerID
+CustomerName
+
+Properties Orders:
+(PK) OrderID
+(FK) CustomerID
+OrderDate
+
+Properties OrderDetails:
+(FK) OrderId
+(FK) BookID
+(PK) OrderID BookID
+Quantity
+
+Table Relations:
+Authors, Books, 1:N
+Publishers, Books, 1:N
+Editors, Books, 1:N
+Customers, Orders, 1:N
+OrderDetails, Orders 1:N
+OrderDetails, Books 1:N
+
+
+
+
