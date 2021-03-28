@@ -1,0 +1,16 @@
+<table border = 1>
+  <tr>
+    <td> {{'AuthorID'}} </td>
+    <td> {{'First Name'}} </td>
+    <td> {{'Last Name'}} </td>      
+    <td> {{'Country'}} </td>                     
+  </tr>
+  {% for author in list %}
+  <tr>
+    <td> {{author[0]}} </td>
+    <td> {{author[1]}} </td>
+    <td> {{author[2]}} </td>      
+    <td> {{author[3]}} </td>                     
+  </tr>
+  {% endfor %}
+  </table>

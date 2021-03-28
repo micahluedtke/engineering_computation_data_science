@@ -1,0 +1,18 @@
+<table border = 1>
+    <tr>
+        <td> {{'BookID'}} </td>
+        <td> {{'Book Title'}} </td>
+        <td> {{'Genre'}} </td>      
+        <td> {{'AuthorID'}} </td>      
+        <td> {{'PublisherID'}} </td>                  
+    </tr>
+    {% for book in list %}
+    <tr>
+        <td> {{book[0]}} </td>
+        <td> {{book[1]}} </td>
+        <td> {{book[2]}} </td>      
+        <td> {{book[3]}} </td>      
+        <td> {{book[4]}} </td>                  
+    </tr>
+    {% endfor %}
+  </table>
