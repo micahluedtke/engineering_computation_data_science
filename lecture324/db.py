@@ -1,11 +1,9 @@
 # imports
 from flask import Flask
 from flaskext.mysql import MySQL
-from desktop import example
 
 # web application
 app = Flask(__name__)
-
 
 # connect to db
 mysql = MySQL()
@@ -16,7 +14,6 @@ mysql.init_app(app)
 
 
 @app.route('/books')
-
 def books():
     cursor = mysql.get_db().cursor()
     response = cursor.execute("SELECT * FROM Books")
@@ -25,7 +22,7 @@ def books():
         books = cursor.fetchall()
         for book in books:
             html += book[1] + '<br/>'
-        return html + example()
+        return html
 
 # start server
 
