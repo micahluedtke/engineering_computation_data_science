@@ -1,5 +1,5 @@
 # Homework Four
-This reposity contains three different versions of the same project that were meant to explore different ways of building the application. The [withbootstrap](https://github.com/micahluedtke/engineering_computation_data_science/tree/master/HomeworkFour/withbootstrap) folder contains the final version of the project and a youtube video exporing the application can be found [here](https://www.youtube.com/).
+This reposity contains three different versions of the same project that were meant to explore different ways of building the application. The [withbootstrap](https://github.com/micahluedtke/engineering_computation_data_science/tree/master/HomeworkFour/withbootstrap) folder contains the final version of the project and a youtube video exporing the application can be found [here](https://youtu.be/3Pa5rkKTjDw). Apologies for the low quality of the video, the export was slow. I will expore a higher quality video when I can commit the processing power to it and reupload. 
 
 *Note:* This project is build on a synthetic book database that is not yet part of this code base. Please see the video linked above to view the app and its functionality. This code could be att
 
