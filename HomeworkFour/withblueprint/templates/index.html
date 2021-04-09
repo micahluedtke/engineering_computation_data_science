@@ -7,7 +7,7 @@
       <td> {{book[3]}} </td>      
       <td> {{book[4]}} </td>
       <td> 
-        <a href="/book?id={{book[0]}}&name={{book[1]}}">
+        <a href="/update?id={{book[0]}}&name={{book[1]}}">
             <img src="/static/edit.png" width="30"> 
         </a>
       </td>
@@ -20,3 +20,9 @@
     </tr>
     {% endfor %}
   </table>
+
+  <br><br>
+  Add College
+  <a href="/create">
+    <img src="/static/plus.png" width="30">
+  </a>

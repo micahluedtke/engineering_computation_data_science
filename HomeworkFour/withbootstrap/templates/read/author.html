@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<head>
+    <style>
+    #authors {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 98%;
+      margin-left:1%; 
+      margin-right:1%;
+    }
+    
+    #authors td, #authors th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #authors tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #authors tr:hover {background-color: #ddd;}
+    
+    #authors th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #0275d8;
+      color: white;
+    }
+    </style>
+</head>
+
+<table id="authors" class="center" border = 1>
+    <th> Author ID</th>
+    <th> First Name</th>
+    <th> Last Name </th>
+    <th> Country </th>      
+    <th> Edit </th>
+    <th> Delete </th>
+  {% for author in list %}
+  <tr>
+    <td> {{author[0]}} </td>
+    <td> {{author[1]}} </td>
+    <td> {{author[2]}} </td>      
+    <td> {{author[3]}} </td>      
+    <td> 
+      <a href="/edit_author?id={{author[0]}}&fname={{author[1]}}&lname={{author[2]}}&country={{author[3]}}">
+          <img src="/static/edit.png" width="30"> 
+      </a>
+    </td>
+    <td> 
+      <a href="/delete_author?id={{author[0]}}">
+          <img src="/static/delete.png" width="30"> 
+      </a>
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="d-grid gap-2">
+    <a href="/new_author" class="btn btn-outline-primary" role="button">Add an Author <img src="/static/plus.png" width="30"> </a>
+</div>  
+
+{% endblock %}

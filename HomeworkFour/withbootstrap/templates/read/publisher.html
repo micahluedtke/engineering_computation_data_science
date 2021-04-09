@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<head>
+    <style>
+    #publishers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 98%;
+      margin-left:1%; 
+      margin-right:1%;
+    }
+    
+    #publishers td, #publishers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #publishers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #publishers tr:hover {background-color: #ddd;}
+    
+    #publishers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #0275d8;
+      color: white;
+    }
+    </style>
+</head>
+
+<table id="publishers" class="center" border = 1>
+    <th> Publisher ID</th>
+    <th> Publisher Name</th>
+    <th> City </th>
+    <th> Region </th>  
+    <th> Country </th>      
+    <th> Edit </th>
+    <th> Delete </th>
+  {% for publisher in list %}
+  <tr>
+    <td> {{publisher[0]}} </td>
+    <td> {{publisher[1]}} </td>
+    <td> {{publisher[2]}} </td>      
+    <td> {{publisher[3]}} </td>    
+    <td> {{publisher[4]}} </td>      
+    <td> 
+      <a href="/edit_publisher?id={{publisher[0]}}&pname={{publisher[1]}}&city={{publisher[2]}}&region={{publisher[3]}}&country={{publisher[4]}}">
+          <img src="/static/edit.png" width="30"> 
+      </a>
+    </td>
+    <td> 
+      <a href="/delete_publisher?id={{publisher[0]}}">
+          <img src="/static/delete.png" width="30"> 
+      </a>
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="d-grid gap-2">
+    <a href="/new_publisher" class="btn btn-outline-primary" role="button">Add a Publisher <img src="/static/plus.png" width="30"> </a>
+</div>  
+
+{% endblock %}

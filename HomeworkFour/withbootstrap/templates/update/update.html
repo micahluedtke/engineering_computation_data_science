@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+<h1>Edit Book</h1>
+<form method="POST" action="/updateBook">
+    Book ID <input type="text" name="id" value="{{book.id}}"/>
+    <br><br>
+    Book Title <input type="text" name="title" value="{{book.title}}"/>
+    <br><br>
+    Genre <input type="text" name="genre" value="{{book.genre}}"/>
+    <br><br>
+    Publication Year <input type="text" name="pubyear" value="{{book.pubyear}}"/>
+    <br><br>
+    Price <input type="text" name="price" value="{{book.price}}"/>
+    <br><br>
+    Royalty Payment <input type="text" name="royalty" value="{{book.royalty}}"/>
+    <br><br>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

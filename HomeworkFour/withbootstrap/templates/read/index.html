@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<head>
+    <style>
+    #books {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 98%;
+      margin-left:1%; 
+      margin-right:1%;
+    }
+    
+    #books td, #books th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #books tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #books tr:hover {background-color: #ddd;}
+    
+    #books th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #0275d8;
+      color: white;
+    }
+    </style>
+</head>
+
+<table id="books" class="center" border = 1>
+    <th> Book ID</th>
+    <th> Book Title</th>
+    <th> Genre </th>
+    <th> Publication Year </th>      
+    <th> Price </th>      
+    <th> Royalty Payment </th>
+    <th> Author </th>
+    <th> Publisher </th>
+    <th> Edit </th>
+    <th> Delete </th>
+  {% for book in list %}
+  <tr>
+    <td> {{book[0]}} </td>
+    <td> {{book[1]}} </td>
+    <td> {{book[2]}} </td>      
+    <td> {{book[3]}} </td>      
+    <td> {{book[4]}} </td>
+    <td> {{book[5]}} </td>
+    <td><a href="/authors">{{book[6]}}</a></td>
+    <td><a href="/publishers">{{book[7]}}</a></td>
+    <td> 
+      <a href="/update?id={{book[0]}}&title={{book[1]}}&genre={{book[2]}}&pubyear={{book[3]}}&price={{book[4]}}&royalty={{book[5]}}">
+          <img src="/static/edit.png" width="30"> 
+      </a>
+    </td>
+    <td> 
+      <a href="/delete?id={{book[0]}}">
+          <img src="/static/delete.png" width="30"> 
+      </a>
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="d-grid gap-2">
+    <a href="/create" class="btn btn-outline-primary" role="button">Add a Book Title <img src="/static/plus.png" width="30"> </a>
+</div>  
+
+{% endblock %}
